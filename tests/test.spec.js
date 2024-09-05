@@ -18,6 +18,6 @@ describe('Main Page', () => {
     await page.waitForSelector('body'); // Ensure the page is loaded
 
     const textContent = await page.evaluate(() => document.body.textContent);
-    expect(textContent).toContain('Hello World');
+    expect(textContent).toContain('Hello World!!!!!');
   });
 });
