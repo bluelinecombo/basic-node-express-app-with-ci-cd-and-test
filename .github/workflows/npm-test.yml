@@ -17,10 +17,11 @@ jobs:
       - name: Start server
         run: |
           nohup npm start &
-          sleep 5
+          npx wait-on http://localhost:3000
 
       - name: Run tests
         run: npm test
 
       - name: Stop server
-        run: kill $(jobs -p)
+        run: |
+          fuser -k 3000/tcp
